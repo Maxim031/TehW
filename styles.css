@@ -1,154 +1,44 @@
-/* Fundal general pentru intregul site */
+/* Fundal general */
 body {
-    background-color: #003366; /* Albastru închis */
-    color: white; /* Textul va fi alb pentru contrast */
-    font-family: Arial, sans-serif; /* Font general */
+    background-color: #003366;
+    color: white;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 /* Stiluri pentru header */
 header {
-    background-color: #cc0000; /* Roșu pentru header */
-    padding: 10px 0;
+    background-color: #cc0000;
+    padding: 15px 0;
     text-align: center;
 }
 
-/* Stiluri pentru navigație */
+/* Navigație */
 nav ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 nav ul li a:hover {
-    color: #ffcc00; /* Culoare galbenă când treci cu mouse-ul peste link */
+    color: #ffcc00;
 }
 
-/* Stiluri pentru butoanele "Cumpără" */
-button {
-    background-color: #cc0000; /* Roșu pentru buton */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px; /* Colțuri rotunjite pentru buton */
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-    width: 100%; /* Lățime 100% pentru alinierea butonului */
-    box-sizing: border-box; /* Asigură că marginile și paddingul sunt incluse în lățimea butonului */
-}
-
-button:hover {
-    background-color: #ff6666; /* Roșu mai deschis la hover */
-}
-
-/* Fundal pentru footer */
+/* Footer */
 footer {
-    background-color: #003366; /* Albastru închis pentru footer */
-    color: white;
+    background-color: #002244;
     text-align: center;
     padding: 10px;
 }
 
-/* Alinierea și stilizarea secțiunii cu produsele */
-#produse {
-    display: flex;
-    flex-wrap: wrap; /* Permite ca produsele să se alinieze pe mai multe rânduri */
-    justify-content: center; /* Centrează produsele */
-    margin: 20px;
-    background: linear-gradient(135deg, #003366, #cc0000); /* Fundal cu gradient albastru închis și roșu */
-    padding: 20px;
-    border-radius: 8px; /* Colțuri rotunjite pentru secțiunea produselor */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbră ușoară pentru secțiune */
-}
-
-/* Stiluri pentru fiecare produs (inclusiv eșarfa) */
-.produs {
-    margin: 20px;
-    display: inline-block;
-    text-align: center;
-    background-color: #ffffff; /* Fundal alb pentru produs */
-    border-radius: 8px; /* Colțuri rotunjite */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbră ușoară pentru produs */
-    padding: 10px;
-    width: 250px; /* Dimensiunea produsului */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efect de tranziție */
-}
-
-/* Efecte la hover pentru produs */
-.produs:hover {
-    transform: translateY(-10px); /* Mută produsul ușor în sus */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Umbră mai puternică la hover */
-}
-
-/* Stiluri pentru imaginea produsului */
-.produs img {
-    width: 100%; /* Imaginea va avea lățimea completă a div-ului */
-    height: auto; /* Înălțimea se ajustează automat */
-    border-radius: 5px; /* Colțuri rotunjite pentru imagine */
-}
-
-/* Stiluri pentru titluri și descrierea produsului */
-.produs h3 {
-    color: #003366; /* Albastru pentru titlul produsului */
-    font-size: 20px;
-    margin: 10px 0; /* Spațiu între titlu și descriere */
-}
-
-.produs p {
-    font-size: 16px;
-    color: #003366; /* Albastru pentru descriere */
-    line-height: 1.5;
-    margin-bottom: 10px; /* Spațiu între descriere și buton */
-}
-
-/* Corectarea problemelor cu butonul și descrierea produsului */
-.produs .buton-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.produs .buton-container button {
-    width: 80%; /* Lățimea butonului va fi puțin mai mică decât lățimea produsului */
-}
-
-/* Stiluri pentru descrierea produsului din pagina detaliată */
-section h2 {
-    color: #cc0000; /* Roșu pentru titlu */
-    font-size: 24px;
-}
-
-section p {
-    font-size: 18px;
-    color: #ffffff; /* Text alb pentru o mai bună vizibilitate pe fundalul închis */
-    line-height: 1.6; /* Spațiu între rânduri pentru text */
-    max-width: 600px; /* Lățimea maximă pentru descriere */
-    margin: 20px auto; /* Centrare */
-}
-
-/* Alinierea produselor pe pagină */
-#produse {
-    display: flex;
-    flex-wrap: wrap; /* Permite ca produsele să se alinieze pe mai multe rânduri */
-    justify-content: center; /* Centrează produsele */
-    margin: 20px;
-}
-
-/* Fiecare produs va avea un anumit spațiu între ele */
-.produs {
-    margin: 10px;
-    width: 250px; /* Dimensiunea maximă a fiecărui produs */
-}
