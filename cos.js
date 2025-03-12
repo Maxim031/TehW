@@ -1,63 +1,56 @@
 document.addEventListener("DOMContentLoaded", function () {
+    let cosProduse = [];
     const butoaneAdauga = document.querySelectorAll(".adauga-in-cos");
+    const cosContainer = document.createElement("div");
 
-    butoaneAdauga.forEach((buton) => {
+    // Creăm butonul de coș
+    cosContainer.id = "cos-container";
+    cosContainer.innerHTML = `
+        <div id="cos">
+            <span id="cos-text">🛒 Coș</span>
+            <div id="cos-dropdown" class="hidden">
+                <ul id="cos-list"></ul>
+                <p id="total">Total: 0 Lei</p>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(cosContainer);
+
+    const cosDropdown = document.getElementById("cos-dropdown");
+    const cosList = document.getElementById("cos-list");
+    const totalElement = document.getElementById("total");
+
+    // Adaugă produse în coș
+    butoaneAdauga.forEach(buton => {
         buton.addEventListener("click", function () {
-            const nume = this.getAttribute("data-nume");
-            const pret = parseFloat(this.getAttribute("data-pret"));
-
-            let cos = JSON.parse(localStorage.getItem("cos")) || [];
-
-            const produsExistent = cos.find((produs) => produs.nume === nume);
-            if (produsExistent) {
-                produsExistent.cantitate += 1;
-            } else {
-                cos.push({ nume, pret, cantitate: 1 });
-            }
-
-            localStorage.setItem("cos", JSON.stringify(cos));
-
-            alert(`${nume} a fost adăugat în coș!`);
+            const numeProdus = this.dataset.nume;
+            const pretProdus = parseInt(this.dataset.pret);
+            
+            cosProduse.push({ nume: numeProdus, pret: pretProdus });
+            actualizeazaCos();
         });
     });
 
-    // Afișăm produsele în `cos.html`
-    if (window.location.pathname.includes("cos.html")) {
-        afiseazaCos();
+    // Afișare coș la hover
+    document.getElementById("cos").addEventListener("mouseenter", function () {
+        cosDropdown.classList.remove("hidden");
+    });
+
+    document.getElementById("cos").addEventListener("mouseleave", function () {
+        cosDropdown.classList.add("hidden");
+    });
+
+    function actualizeazaCos() {
+        cosList.innerHTML = "";
+        let total = 0;
+
+        cosProduse.forEach(prod => {
+            let item = document.createElement("li");
+            item.textContent = `${prod.nume} - ${prod.pret} Lei`;
+            cosList.appendChild(item);
+            total += prod.pret;
+        });
+
+        totalElement.textContent = `Total: ${total} Lei`;
     }
 });
-
-function afiseazaCos() {
-    const listaCos = document.getElementById("lista-cos");
-    const totalElement = document.getElementById("total");
-    let cos = JSON.parse(localStorage.getItem("cos")) || [];
-
-    listaCos.innerHTML = "";
-
-    let total = 0;
-    cos.forEach((produs, index) => {
-        total += produs.pret * produs.cantitate;
-        listaCos.innerHTML += `
-            <div class="produs-cos">
-                <p>${produs.nume} - ${produs.pret} Lei x ${produs.cantitate}</p>
-                <button class="sterge" data-index="${index}">Șterge</button>
-            </div>
-        `;
-    });
-
-    totalElement.textContent = `Total: ${total} Lei`;
-
-    document.querySelectorAll(".sterge").forEach((buton) => {
-        buton.addEventListener("click", function () {
-            let index = this.getAttribute("data-index");
-            cos.splice(index, 1);
-            localStorage.setItem("cos", JSON.stringify(cos));
-            afiseazaCos();
-        });
-    });
-
-    document.getElementById("goleste-cos").addEventListener("click", function () {
-        localStorage.removeItem("cos");
-        afiseazaCos();
-    });
-}
