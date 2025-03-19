@@ -1,0 +1,61 @@
+/* Stil pentru iconița coșului */
+#cos-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgb(255, 0, 0);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    z-index: 1000;
+}
+
+/* Stil pentru containerul coșului (ascuns implicit) */
+#cos-container {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background: rgb(250, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 250px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Afișăm coșul când mouse-ul e pe iconiță */
+#cos-icon:hover + #cos-container,
+#cos-container:hover {
+    display: flex;
+}
+
+/* Stil pentru produsele din coș */
+.cos-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cos-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.cos-remove {
+    background: rgb(0, 17, 255);
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+}
