@@ -22,6 +22,14 @@ function actualizeazaCos() {
         `;
         cosLista.appendChild(item);
     });
+
+    // Afișează butonul „Șterge tot din coș” doar dacă sunt produse
+    const stergeTotBtn = document.getElementById('sterge-tot');
+    if (cosProduse.length > 0) {
+        stergeTotBtn.style.display = 'block';
+    } else {
+        stergeTotBtn.style.display = 'none';
+    }
 }
 
 // Șterge un produs din coș
@@ -30,13 +38,54 @@ function stergeProdus(index) {
     actualizeazaCos();
 }
 
-// Șterge toate produsele din coș
-V
+function stergeTot() {
+    console.log("Șterge tot din coș a fost apăsat");
+    cosProduse = [];
+    actualizeazaCos();
+}
 
-// Simulează cumpărarea produselor
-document.getElementById("cumpara").addEventListener("click", function () {
-    window.open("checkout.html", "_blank"); // Deschide pagina de checkout într-un tab nou
+function cumparaProdusele() {
+    console.log("Cumpără produsele a fost apăsat");
+    window.location.href = "checkout.html"; // Redirecționează către checkout
+}
+document.addEventListener("DOMContentLoaded", function() {
+    // Codul tău pentru evenimente, ca să te asiguri că DOM-ul este complet încărcat
+    
+    const stergeTotBtn = document.getElementById("sterge-tot");
+    const cumparaProduseleBtn = document.getElementById("cumpara-produsele");
+
+    if (stergeTotBtn && cumparaProduseleBtn) {
+        stergeTotBtn.addEventListener("click", function () {
+            console.log("Șterge tot din coș a fost apăsat");
+            cosProduse = [];
+            actualizeazaCos();
+        });
+
+        cumparaProduseleBtn.addEventListener("click", function () {
+            console.log("Cumpără produsele a fost apăsat");
+            window.location.href = "checkout.html";
+        });
+    } else {
+        console.log("Butonul nu a fost găsit.");
+    }
 });
+
+document.getElementById("sterge-tot").addEventListener("click", function () {
+    console.log("Șterge tot din coș a fost apăsat");
+    cosProduse = [];
+    actualizeazaCos();
+});
+
+document.getElementById("cumpara-produsele").addEventListener("click", function () {
+    console.log("Cumpără produsele a fost apăsat");
+    window.location.href = "checkout.html";
+});
+
+
+
+
+
+
 
 
 

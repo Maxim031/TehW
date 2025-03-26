@@ -3,35 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coș de cumpărături</title>
-    <link rel="stylesheet" href="css/cos.css">
+    <title>Coșul meu</title>
+    <link rel="stylesheet" href="css/styles.css"> 
 </head>
-<body>
+<script src="cos.js"></script>
+</body>
     <header>
-<div id="cos-icon">🛒</div>
-<div id="cos-container">
-    <h3>Coș de cumpărături</h3>
-    <div id="cos-lista">
-    </div>
-    <button id="cos-sterge-tot">Șterge tot din coș</button>
-    <button id="cos-cumpara">Cumpără produsele</button>
-</div>
-
+        <h1>Coșul Meu</h1>
     </header>
 
     <main>
-        <section id="cos">
-            <h2>Produsele din coș</h2>
-            <div id="lista-cos"></div>
-            <h3 id="total">Total: 0 Lei</h3>
-            <button id="goleste-cos">Golește coșul</button>
-        </section>
+        <div id="cos-meniu" class="cos-container">
+            <h3>Coșul tău</h3>
+            <div id="cos-lista"></div> <!-- Produsele din coș -->
+            <button id="sterge-tot">Sterge tot</button>
+            <button id="cumpara-produsele">Cumpara produsele</button>
+          
+        </div>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Fotbal Shop. Toate drepturile rezervate.</p>
-    </footer>
-
-    <script src="cos.js"></script>
-</body>
 </html>
