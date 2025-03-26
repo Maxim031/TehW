@@ -134,3 +134,17 @@ nav ul li a:hover {
     border-radius: 50%;
 }
 
+.btn-cumpara {
+    background-color: red; /* culoare de fundal roșie */
+    color: white; /* text alb */
+    border: none; /* fără bordură */
+    padding: 10px 20px; /* margini interioare */
+    font-size: 16px; /* dimensiune font */
+    cursor: pointer; /* cursorul va fi o mână */
+    border-radius: 5px; /* colțuri rotunjite */
+    transition: background-color 0.3s ease;
+}
+
+.btn-cumpara:hover {
+    background-color: darkred; /* culoare mai închisă la hover */
+}
