@@ -1,32 +1,28 @@
-<?php
-// Citește conținutul fișierului care conține mesajele trimise
-$mesaje = file_get_contents('mesaje_contact.txt');
-?>
-
 <!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesaje Contact - Fotbal Shop</title>
+    <title>Fotbal Shop</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <h1>Mesaje Contact - Fotbal Shop</h1>
+        <h1>Fotbal Shop</h1>
         <nav>
             <ul>
-                <li><a href="index.php">Acasă</a></li>
+                <li><a href="acasa.php">Acasă</a></li>
                 <li><a href="produse.php">Produse</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
-        </nav>
+        </nav>        
     </header>
 
     <main>
-        <section>
-            <h2>Mesaje trimise:</h2>
-            <pre><?php echo $mesaje; ?></pre> <!-- Afișează mesajele citite din fișier -->
+        <section id="acasa">
+            <h2>Bine ai venit la Fotbal Shop!</h2>
+            <p>La noi găsești echipamente de fotbal de calitate pentru toți pasionații.</p>
+            <button onclick="window.location.href='produse.php'">Vezi Produsele</button>
         </section>
     </main>
 

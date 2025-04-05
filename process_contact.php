@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     file_put_contents("mesaje_contact.txt", $data, FILE_APPEND);
     
     // Redirecționăm utilizatorul la o pagină de confirmare
-    header("Location: contact_confirmat.html");
+    header("Location: contact_confirmat.php");
     exit();
 }
 ?>

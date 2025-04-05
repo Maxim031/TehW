@@ -46,7 +46,7 @@ function stergeTot() {
 
 function cumparaProdusele() {
     console.log("Cumpără produsele a fost apăsat");
-    window.location.href = "checkout.html"; // Redirecționează către checkout
+    window.location.href = "checkout.php"; // Redirecționează către checkout
 }
 document.addEventListener("DOMContentLoaded", function() {
     // Codul tău pentru evenimente, ca să te asiguri că DOM-ul este complet încărcat
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         cumparaProduseleBtn.addEventListener("click", function () {
             console.log("Cumpără produsele a fost apăsat");
-            window.location.href = "checkout.html";
+            window.location.href = "checkout.php";
         });
     } else {
         console.log("Butonul nu a fost găsit.");
@@ -78,7 +78,7 @@ document.getElementById("sterge-tot").addEventListener("click", function () {
 
 document.getElementById("cumpara-produsele").addEventListener("click", function () {
     console.log("Cumpără produsele a fost apăsat");
-    window.location.href = "checkout.html";
+    window.location.href = "checkout.php";
 });
 
 
