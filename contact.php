@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/contact.css">
 </head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="contact.js" defer></script>
+
 <body>
     <header>
         <h1>Fotbal Shop - Contact</h1>
@@ -20,21 +23,22 @@
     </header>
   
     <main>
-        <section id="contact">
-            <h2>Contactează-ne</h2>
-            <form action="process_contact.php" method="POST">
-                <label for="nume">Nume:</label>
-                <input type="text" id="nume" name="nume" required>
+    <section id="contact">
+    <h2>Contactează-ne</h2>
+    <form id="contactForm">
+        <label for="nume">Nume:</label>
+        <input type="text" id="nume" name="nume" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-                <label for="mesaj">Mesaj:</label>
-                <textarea id="mesaj" name="mesaj" required></textarea>
+        <label for="mesaj">Mesaj:</label>
+        <textarea id="mesaj" name="mesaj" required></textarea>
 
-                <button type="submit">Trimite</button>
-            </form>
-        </section>
+        <button type="submit">Trimite</button>
+    </form>
+    <div id="raspuns"></div>
+</section>
     </main>
 
     <footer>
